@@ -1,0 +1,51 @@
+
+html{
+    background-color: aqua;
+    overflow: hidden;
+
+}
+
+.background{
+    position: absolute;
+    z-index: -99;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    .box{
+        border-radius: .5rem;
+        aspect-ratio: 1/1;
+        background-color: rgb(110, 110, 110);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: -10vh;
+       
+        ion-icon{
+            color: aqua;
+            font-size: 80%;
+        }
+    }
+}
+@for $i from 1 through 17 {
+    $size:(random(3))*2 + 1vw;
+    .box#{$i}{
+        left: random(30)*3vw;
+        animation: animate linear infinite;
+        animation-delay: random(120) * -1s;
+        height: $size;
+        font-size: $size;
+        animation-duration: random(60) + 10s;
+        opacity: .5;
+    }
+}
+
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+    transform: translateY(-120vh) rotate(720deg);
+    }
+}

@@ -8,7 +8,6 @@ function Skills() {
             <div className="backend">back</div>
             <div className="others">others</div>
         </div>
-
     </div>
   )
 }

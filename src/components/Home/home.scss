@@ -1,8 +1,25 @@
+:root {
+    --font: #bebebe;
+    --nav: #2978A9;
+
+    --bg: #0F172A;
+    --fonthover: #616060;
+
+    --navfont: #0F172A;
+    --navfonthover: #bdbdbd;
+}
+
+
 
 html{
-    background-color: aqua;
     overflow: hidden;
+    background: var(--bg);
+}
 
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .background{
@@ -14,7 +31,7 @@ html{
     .box{
         border-radius: .5rem;
         aspect-ratio: 1/1;
-        background-color: rgb(110, 110, 110);
+        background-color: var(--nav);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -22,12 +39,12 @@ html{
         bottom: -10vh;
        
         ion-icon{
-            color: aqua;
+            color: var(--bg);
             font-size: 80%;
         }
     }
 }
-@for $i from 1 through 17 {
+@for $i from 1 through 18 {
     $size:(random(3))*2 + 1vw;
     .box#{$i}{
         left: random(30)*3vw;

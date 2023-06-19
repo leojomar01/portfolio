@@ -1,74 +1,68 @@
 .nav{
     height: 100vh;
     position: relative;
-}
-.svg-container {
-    width: 520px;
-    height: 80px;
-    max-width: 100vw;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    left: 50%;
-    bottom: 0%;
-    
-  }
-  
-  .svg-content {
 
-    width: 100%;
-    height: 100%;
-    fill: rgb(41, 120, 169, .3);
-    stroke-linejoin: round;
-    stroke:rgb(41, 120, 169, .3);
-    stroke-width: 5px;
-    z-index: -1;
-
-    &::before{
-        content: "";
+    .svg-container,.svg-container .menu{
         position: absolute;
-        z-index: 2;
-        opacity: .5;
-        width: inherit;
-        height: inherit;
-        border: 1px solid red;
+        transform: translate(-50%,-50%);
+        left: 50%;
+        bottom: 0%;
+        width: 520px;
+        max-width: 100vw;
+        height: 60px;
     }
-}
 
-.menu{
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    text-align: center;
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    .svg-container {
+        overflow: hidden;
 
-    gap:0 3rem;
-    li{
-        color:aliceblue;
-        font-weight: 600;
-        position: relative;
-        z-index: 2;
-
-        &:hover{
-            cursor: pointer;
+        .svg-content {
+            backdrop-filter: blur(5px);
+            width: 100%;
+            height: 100%;
+            fill: rgb(41, 120, 169, .3);
+            stroke-linejoin: round;
+            stroke:rgb(41, 120, 169, .3);
+            stroke-width: 10px;
+            z-index: -1;
         }
-        &:hover::before, &.active::before{
-            content: "";
-            position: absolute;
-            transform: translate(-50%,-50%);
-            left: 50%;
+        .menu{
+            text-align: center;
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
             top: 50%;
-            width: 200%;
-            height: 200%;
-            border-radius: 50%;
-            z-index: -99;
-            background: rgb(41, 120, 169);
-            filter: blur(20px);
+            gap:0 4rem;
+            li{
+                color:aliceblue;
+                font-weight: 600;
+                position: relative;
+                z-index: 2;
+                &:hover{
+                    cursor: pointer;
+                }
+                &:hover::before, &.active::before{
+                    content: "";
+                    position: absolute;
+                    transform: translate(-50%,-50%);
+                    left: 50%;
+                    top: 100%;
+                    width: 150px;
+                    height: 300%;
+                    border-radius: 50%;
+                    z-index: -99;
+                    background: rgb(41, 120, 169);
+                    filter: blur(20px);
+                }
+            }
         }
     }
+
+    
+      
 }
+
   
+  
+

@@ -1,5 +1,6 @@
 import React from 'react'
 import './skills.scss'
+import Home from '../Home/Home'
 function Skills() {
   return (
     <div className='skills'>

@@ -10,10 +10,10 @@ function Nav() {
     <div className='nav'>
         <div className="svg-container">
             <svg
-                viewBox="0 0 520 70"
+                viewBox="0 0 520 60"
                 className="svg-content"
             >
-            <path d="M 40 10 230 10 255 20 280 10 480 10 510 35 480 60 40 60 10 35 z40 10 "/>
+            <path d="M 260 15 290 5 485 5 515 30 485 55 35 55 5 30 35 5 230 5 z550 20"/>
             </svg>
 
             <ul className='menu'>
@@ -22,6 +22,7 @@ function Nav() {
                 <li>Skills</li>
             </ul>
         </div>
+        
     </div>
 
   )

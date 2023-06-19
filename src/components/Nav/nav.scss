@@ -9,10 +9,12 @@
     position: absolute;
     transform: translate(-50%,-50%);
     left: 50%;
-    top: 90%;
+    bottom: 0%;
+    
   }
   
   .svg-content {
+
     width: 100%;
     height: 100%;
     fill: rgb(41, 120, 169, .3);
@@ -40,28 +42,32 @@
     transform: translate(-50%,-50%);
     text-align: center;
     list-style: none;
-    columns: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    gap:0 3rem;
     li{
         color:aliceblue;
         font-weight: 600;
         position: relative;
         z-index: 2;
 
-        &:not(:first-child){
-            border-left: 5px solid rgb(41, 120, 169, .3);
-        }
         &:hover{
             cursor: pointer;
         }
-        &:hover::after{
+        &:hover::before, &.active::before{
             content: "";
             position: absolute;
-            width: 80%;
-            height: 100%;
-            bottom: 0;
-            left: 20%;
-            z-index: -3;
-            border-bottom: 1px solid red;
+            transform: translate(-50%,-50%);
+            left: 50%;
+            top: 50%;
+            width: 200%;
+            height: 200%;
+            border-radius: 50%;
+            z-index: -99;
+            background: rgb(41, 120, 169);
+            filter: blur(20px);
         }
     }
 }

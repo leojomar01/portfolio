@@ -15,9 +15,9 @@ function Nav() {
             >
             <path d="M 40 10 230 10 255 20 280 10 480 10 510 35 480 60 40 60 10 35 z40 10 "/>
             </svg>
-            
+
             <ul className='menu'>
-                <li>About</li>
+                <li className=''>About</li>
                 <li>Projects</li>
                 <li>Skills</li>
             </ul>

@@ -1,13 +1,14 @@
 import React from 'react';
 import './nav.scss';
+import { NavLink } from 'react-router-dom';
 
 function Nav() {
   return (
     <div className='nav'>
       <ul className="menu">
-        <li>About</li>
-        <li>Projects</li>
-        <li>Skills</li>
+        <li><NavLink to={'../'}>About</NavLink></li>
+        <li><NavLink to={'../projects'}>Projects</NavLink></li>
+        <li><NavLink to={'../skills'}>Skills</NavLink> </li>
       </ul>
     </div>
   )

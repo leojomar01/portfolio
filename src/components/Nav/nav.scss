@@ -2,30 +2,23 @@
     position: relative;
     height: 100vh;
     width: 100vw;
-    
-
     .menu{
         width: 520px;
         height: 50px;
         max-width: 90vw;
-
         position: absolute;
         transform: translate(-50%,0%);
         top: 85%;
         left: 50%;
-
         columns: 3;
         text-align: center;
-
         display:flex;
         justify-items: center;
         align-items: center;
-
         mask-size: 100% 100%;
         background-color: rgb(41, 120, 169,.3);
         backdrop-filter: blur(5px);
         mask-image: url('../../assets/images/mask2.png');
-
         &::before{
             content: "";
             position: absolute;
@@ -36,16 +29,16 @@
             background: rgb(41, 120, 169,.5) url('../../assets/images/dots.png');
             mask-image: url('../../assets/images/mask.png');
             mask-size: inherit;
-            
         }
-
         li{
             list-style: none;
             width: 100%;
-            color: white;
-            cursor: pointer;
             position: relative;
-
+            a{
+                color: white;
+                width: 100%;
+                text-decoration: none;
+            }
             &:hover::after,&:hover:before,&::before,&::after{
                 position: absolute;
                 transform: translate(-50%,0);
@@ -64,6 +57,7 @@
                 filter: blur(25px);
                 bottom: 0;
                 transition: .3s;
+                z-index: -1;
             }
             &::before{
                 height: 100%;
@@ -71,6 +65,7 @@
                 bottom: -50%;
                 border-bottom: 2px solid rgb(0, 157, 255);
                 transition: .3s;
+                z-index: -1;
             }
             &:hover::before{
                 width: 50%;

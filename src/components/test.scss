@@ -1,0 +1,79 @@
+$width: 110px;
+$color: rgb(41, 120, 169,.3);
+$stroke: rgb(41, 120, 169,1);
+$time: 2s;
+
+.hexagon {
+  height: auto;
+  transition: opacity 0.3s;
+  width: $width;
+//   padding: 4px;
+
+  * {
+    transform-origin: 50px 60px;
+    fill: $color;
+
+    @for $i from 1 to 7 {
+      &:nth-child(#{$i}) {
+        transform: rotateZ(60 * ($i - 1) + deg);
+
+        g {
+          transform-box: fill-box;
+          transform-origin: 33% 50%;
+          animation: $time linear ($time / 12) * $i infinite hexagon-flip-triangles;
+          stroke: $stroke;
+          stroke-width: 2;
+
+          path {
+            transform: rotateY(90deg);
+            animation: $time linear ($time / 12) * $i infinite hexagon-fold-triangles;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+.loader {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  left: 0;
+  justify-content: center;
+  user-select: none;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+
+
+// Animations
+@keyframes hexagon-fold-triangles {
+  0% {
+    transform: rotateY(90deg);
+    fill: darken($color, 25%);
+  }
+
+  8.3%, 50% {
+    transform: rotateY(0deg);
+    fill: $color;
+  }
+
+  58.3% {
+    transform: rotateY(90deg);
+    fill: darken($color, 25%);
+  }
+}
+
+@keyframes hexagon-flip-triangles {
+  0%, 49.99% {
+    transform: rotate(0deg);
+  }
+
+  50%, 100% {
+    transform: rotate(240deg);
+  }
+}

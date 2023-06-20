@@ -9,7 +9,12 @@
     --navfonthover: #bdbdbd;
 }
 
-
+html,
+body,
+#root,
+.App {
+	height: 100%;
+}
 
 html{
     overflow: auto;
@@ -25,25 +30,43 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.background{
-    position: absolute;
-    z-index: -99;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    .box{
-        border-radius: 10%;
-        aspect-ratio: 1/1;
-        background-color: var(--nav);
-        display: flex;
-        justify-content: center;
-        align-items: center;
+.home.active{
+    *{
+        transition: 1.5s;
+    }
+    .background{
+        opacity: 1;
+
+        .box{
+            border-radius: 10%;
+            ion-icon{
+                font-size: 80%;
+            }
+        }
+    }
+}
+
+.home{
+    .background{
+        opacity: .1;
         position: absolute;
-        bottom: -10vh;
-       
-        ion-icon{
-            color: var(--bg);
-            font-size: 80%;
+        z-index: -99;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        .box{
+            border-radius: 100%;
+            aspect-ratio: 1/1;
+            background-color: var(--nav);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: -10vh;
+            ion-icon{
+                color: var(--bg);
+                font-size: 0%;
+            }
         }
     }
 }

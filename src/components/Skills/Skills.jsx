@@ -1,10 +1,8 @@
-import React from 'react'
-import './skills.scss'
-import Home from '../Home/Home'
+import React from 'react';
+import './skills.scss';
 function Skills() {
   return (
     <div className='skills'>
-      <Home/>
         <div className="container">
             <div className="frontend">front</div>
             <div className="backend">back</div>

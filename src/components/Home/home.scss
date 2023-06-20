@@ -12,10 +12,12 @@
 
 
 html{
-    overflow: hidden;
+    overflow: auto;
     background: var(--bg);
 }
-
+body{
+    position: relative;
+}
 *{
     padding: 0;
     margin: 0;

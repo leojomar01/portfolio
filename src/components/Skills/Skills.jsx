@@ -4,6 +4,7 @@ import Home from '../Home/Home'
 function Skills() {
   return (
     <div className='skills'>
+      <Home/>
         <div className="container">
             <div className="frontend">front</div>
             <div className="backend">back</div>

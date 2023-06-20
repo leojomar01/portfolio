@@ -19,7 +19,6 @@ function Test() {
     xmlns="http://www.w3.org/2000/svg"
     className="hexagon"
     viewBox="-5 0 110 130">
-
     {triangles}
   </svg>
 </div>

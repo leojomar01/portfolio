@@ -30,32 +30,33 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.home.active{
+.home{
+    height: 100%;
     *{
         transition: 1.5s;
     }
     .background{
-        opacity: 1;
+        opacity: .1;
 
         .box{
-            border-radius: 10%;
+            border-radius: 100%;
             ion-icon{
-                font-size: 80%;
+                font-size: 0%;
             }
         }
     }
 }
 
-.home{
+.home.active{
     .background{
-        opacity: .1;
+        opacity: 1;
         position: absolute;
         z-index: -99;
-        height: 100vh;
+        height: 100%;
         width: 100vw;
         overflow: hidden;
         .box{
-            border-radius: 100%;
+            border-radius: 15%;
             aspect-ratio: 1/1;
             background-color: var(--nav);
             display: flex;
@@ -65,7 +66,7 @@ body{
             bottom: -10vh;
             ion-icon{
                 color: var(--bg);
-                font-size: 0%;
+                font-size: 80%;
             }
         }
     }
@@ -73,7 +74,7 @@ body{
 @for $i from 1 through 18 {
     $size:(random(3))*2 + 1vw;
     .box#{$i}{
-        left: random(30)*3vw;
+        left: random(36) * 2.5vw;
         animation: animate linear infinite;
         animation-delay: random(120) * -1s;
         height: $size;

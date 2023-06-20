@@ -8,7 +8,7 @@ import Test from '../Test';
 function Home() {
 const list = ['css3','html5','react','laravel','nodejs','sass','github','javascript','python','npm','stackoverflow','chrome','codepen'];
 const [isLoading, setIsLoading]= useState(true);
-const defaultTimer = 2500;
+const defaultTimer = 2000;
 
 const [cName, setCName]= useState("");
 const randomNum = Math.floor(Math.random() * 5) * 500 + defaultTimer;
@@ -17,21 +17,16 @@ useEffect(() => {
   const delayedFunction = () => {
     setIsLoading(false)
   };
-
-  const timer = setTimeout(delayedFunction, randomNum);
-  console.log(randomNum)
-
-  return () => clearTimeout(timer);
-}, [randomNum]); 
-
-useEffect(() => {
-  const delayedFunction = () => {
+  const delayedFunction2 = () => {
     setCName('active')
   };
-  
-  const timer = setTimeout(delayedFunction, randomNum + 100);
-  return () => clearTimeout(timer);
-}, []); 
+
+  const timer = setTimeout(delayedFunction, randomNum);
+  const timer2 = setTimeout(delayedFunction2, randomNum + 100);
+
+  return () => clearTimeout(timer,timer2);
+}, [randomNum]); 
+
 
 return (
     <>

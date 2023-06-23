@@ -1,14 +1,16 @@
 .nav{
-    position: relative;
-    height: 100%;
-    width: 100vw;
+    position: absolute;
+    bottom: 10%;
+    transform: translate(-50%,0);
+    left: 50%;
+
     .menu{
         width: 520px;
         height: 50px;
         max-width: 90vw;
         position: absolute;
         transform: translate(-50%,0%);
-        top: 85%;
+        top: 90%;
         left: 50%;
         columns: 3;
         text-align: center;

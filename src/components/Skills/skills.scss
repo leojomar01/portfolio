@@ -1,52 +1,168 @@
-.container{
-    height: 70%;
-    width: 50vw;
-    margin: 10% 25vw ;
-    transform: perspective(1200px) rotateY(10deg);
-    padding: 2rem;
-    background: rgb(41, 120, 169, .3);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 3px solid rgba(255, 255, 255, 0.43);
-    display: grid;
-    grid-template-areas: "front back"
-    "others others";
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows:repeat(2, 1fr) ;
+$hexSize:100;
+.skills{
+    width:100vw;
+    height:100vh;
     position: absolute;
-    top: 0;
-    filter: blur(1px);
-    &::before{
-        position: absolute;
-        border-radius: inherit;
-        content: "";
-        opacity: .5;
-        width: inherit;
-        height: inherit;
-        z-index: -1;
-        background: url('../../assets/images/dots.png');
-    }
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    transform: translate(-50%,0%);
+    left: 50%;
+    top:-90vh;
 
-    &:hover{
+    .container{
+        width: $hexSize * 7px;
+        padding-top: 5%;
+
+        .card:nth-child(3){
+            margin-right: $hexSize+px;
+        }
+        .card:nth-child(n+7){
+            transform: translate($hexSize*.5px,-15px);
+        }
+        .card:nth-child(n+13){
+            transform: translate(0,-30px);
+        }
         
-        filter: blur(0);
-
+        .card:nth-child(13){
+            margin-left: $hexSize*2px;
+        }
+        
+        .card:nth-child(n+14){
+            transform: translate(0,-30px);
+        }
+        .card:nth-child(16){
+            margin-left: $hexSize*2px;
+        }
+        .card:nth-child(n+16){
+            transform: translate($hexSize* -1.5px,-45px);
+        }
+        
+        .card{
+            opacity: 0;
+            display: inline-block;
+            width: $hexSize+px;
+            height: $hexSize+px;
+            position: relative;
+            .icon{
+                position: absolute;
+                transform: translate(-50%,-50%);
+                top: 50%;
+                left: 50%;
+                svg{
+                    width: $hexSize*.5px;
+                    height: $hexSize*.5px;
+                    fill: rgb(41, 120, 169,.3);
+                    transition: .5s;
+                }
+            }
+            svg{
+                width: $hexSize+px;
+                height: $hexSize+px;
+                g{
+                    .line{
+                        fill: rgb(41, 120, 169,.3);
+                        stroke: rgb(41, 120, 169,.3);
+                        stroke-width: 5;
+                        transition: .5s;
+                        stroke-dasharray: 560;
+                        stroke-dashoffset: 0; 
+                    }
+                    .progress{
+                        position: absolute;
+                        fill: transparent;
+                        stroke-width: 6;
+                        stroke-linejoin: round;
+                        stroke-dasharray: 560;
+                        stroke-dashoffset: 560; 
+                        transition: .5s;
+                    }
+                }
+            }
+        }
     }
 }
 
-.frontend{
-    grid-area: front;
-    height: 25%;
 
-}
-.backend{
-    grid-area: back;
-    height: 25%;
+$skillList:('css','html','javascript','jquery','sass','react',
+'nodejs','mysql','restapi','mongodb','php','laravel',
+'photoshop','git','vscode','cplusplus','java');
 
-}
-.others{
-    grid-area: others;
+$skills:(
+    css:(
+        progress:85,fill:rgb(38,77,228)),
+    html:(
+        progress:85,fill:rgb(172,58,29)),
+    javascript:(
+        progress:80,fill:rgb(240, 237, 51)),
+    jquery:(
+        progress:60,fill:rgb(0, 70, 136)),
+    sass:(
+        progress:85,fill:rgb(230, 25, 230)),
+    react:(
+        progress:65,fill:rgb(41, 159, 228)),
+    nodejs:(
+        progress:45,fill:rgb(3, 95, 11)),
+    mysql:(
+        progress:85,fill:rgb(66,117,156)),
+    restapi:(
+        progress:45,fill:rgb(1,175,223)),
+    mongodb:(
+        progress:35,fill:rgb(4, 104, 4)),
+    php:(
+        progress:70,fill:rgb(115,119,173)),
+    laravel:(
+        progress:40,fill:rgb(245, 30, 30)),
+    photoshop:(
+        progress:85,fill:rgb(0, 48, 102)),
+    git:(
+        progress:85,fill:rgb(0, 0, 0)),
+    vscode:(
+        progress:85,fill:rgb(58,148,205)),
+    cplusplus:(
+        progress:35,fill:rgb(0,118,247)),
+    java:(
+        progress:35,fill:rgb(250, 7, 7)),
+);
+
+
+@function skill($skill, $position: 1) {
+    @return map-get(map-get($skills, $skill), $position)
+};
+$i:0;
+.skills{
+    @each $skill in $skillList{
+        $i:$i+1;
+        .container{
+            .card:nth-child(#{$i}):hover{
+                .icon{
+                    svg{
+                        fill:skill($skill,fill);
+                    }
+                }
+                svg{
+                    g{
+                        .line{
+                            fill: rgba(0, 0, 0, 0.3);
+                            stroke-dasharray: 560;
+                            stroke-dashoffset: -560; 
+                        }
+                        .progress{
+                            stroke-dashoffset:  calc(560 - (560 * skill($skill,progress) )/100);
+                            stroke:skill($skill,fill);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
+
+
+
+.btn{
+    border: 1px solid red;
+    width: 50px;
+    height: 50px;
+}

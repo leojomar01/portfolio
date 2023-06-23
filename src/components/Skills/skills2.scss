@@ -1,0 +1,163 @@
+$hexSize:100;
+.skills{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: center;
+    margin: 5% auto;
+    width: ($hexSize * 3px)*2;
+    .frontend{
+        .card:nth-child(-n+3){
+            transform: translate($hexSize * -0.5px,15px);
+        }
+    }
+    .backend{
+        .card:nth-child(-n+3){
+            transform: translate($hexSize * 0.5px,15px);
+        }
+        .card:nth-child(4){
+            // transform: scale(3);
+        }
+    }
+    .others{
+        .card:nth-child(-n+3){
+            transform: translate($hexSize * 0.5px,-15px);
+        }
+        .card:nth-child(n+4){
+            transform: translate($hexSize * 3px,-30px);
+        }
+        .card:nth-child(3){
+            // transform: translate($hexSize * 0.5px,-15px)  scale(3);
+
+        }
+        
+    }
+    .frontend,.backend,.others{
+        width: auto;
+        width: $hexSize * 3px;
+        .card{
+            display: inline-block;
+            width: $hexSize+px;
+            height: $hexSize+px;
+            position: relative;
+            
+            .icon{
+                position: absolute;
+                transform: translate(-50%,-50%);
+                top: 50%;
+                left: 50%;
+
+                svg{
+                    width: $hexSize*.5px;
+                    height: $hexSize*.5px;
+                    fill: rgb(41, 120, 169,.3);
+                }
+            }
+            svg{
+                width: $hexSize+px;
+                height: $hexSize+px;
+                g{
+                    .line{
+                        fill: rgb(41, 120, 169,.3);
+                        stroke: rgb(41, 120, 169,.3);
+                        stroke-width: 5;
+                        transition: .5s;
+                        stroke-dasharray: 560;
+                        stroke-dashoffset: 0; 
+
+                    }
+                    .progress{
+                        position: absolute;
+                        fill: transparent;
+                        stroke-width: 6;
+                        stroke-linejoin: round;
+                        stroke-dasharray: 560;
+                        stroke-dashoffset: 560; 
+                        transition: .5s;
+                    }
+                }
+            }
+        }
+    }
+    
+
+    
+}
+
+
+
+$frontendSkill: (85,85,80,60,85,60);
+$frontendFill: (rgb(38,77,228),rgb(172,58,29),rgb(240, 237, 51),rgb(0, 70, 136),rgb(230, 25, 230),rgb(41, 159, 228));
+
+$backendSkill:(45,85,55,30,70,40);
+$backendFill: (rgb(3, 95, 11),rgb(37, 34, 212),rgb(1, 3, 145),rgb(4, 104, 4),rgb(115,119,173),rgb(245, 30, 30));
+
+$othersSkill:(80,80,80,30,30);
+$othersFill: (rgb(0, 48, 102),rgb(0, 0, 0),rgb(58,148,205),rgb(0,118,247),rgb(250, 7, 7));
+
+
+.skills{
+
+    @for $i from 1 through 6{
+        .frontend{
+            .card:nth-child(#{$i}):hover{
+                .icon{
+                    svg{
+                        transition: .5s;
+                        fill:nth($frontendFill, $i);
+                    }
+                }
+                svg{
+                    g{
+                        .line{
+                            fill: rgba(0, 0, 0, 0.3);
+                            stroke-dasharray: 560;
+                            stroke-dashoffset: -560; 
+                        }
+                        .progress{
+                            stroke-dashoffset:  calc(560 - (560 * nth($frontendSkill, $i))/100);
+                            stroke:nth($frontendFill, $i) ;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @for $i from 1 through 6{
+        .backend{
+            .card:nth-child(#{$i}):hover{
+                svg{
+                    g{
+                        .line{
+                            fill: rgba(0, 0, 0, 0.3);
+                            stroke-dasharray: 560;
+                            stroke-dashoffset: -560; 
+                        }
+                        .progress{
+                            stroke-dashoffset:  calc(560 - (560 * nth($backendSkill, $i))/100);
+                            stroke:nth($backendFill, $i) ;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @for $i from 1 through 5{
+        .others{
+            .card:nth-child(#{$i}):hover{
+                svg{
+                    g{
+                        .line{
+                            fill: rgba(0, 0, 0, 0.3);
+                            stroke-dasharray: 560;
+                            stroke-dashoffset: -560; 
+                        }
+                        .progress{
+                            stroke-dashoffset:  calc(560 - (560 * nth($othersSkill, $i))/100);
+                            stroke:nth($othersFill, $i) ;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

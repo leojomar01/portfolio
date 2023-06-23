@@ -1,6 +1,6 @@
 import React from 'react'
-import './test.scss'
-function Test() {
+import './loader.scss'
+function Loader() {
 
     const triangles=[];
     for(let i = 0; i<6;i++){
@@ -27,4 +27,4 @@ function Test() {
   )
 }
 
-export default Test
+export default Loader

@@ -1,0 +1,202 @@
+.container{
+    height: auto;
+    width: 80%;
+    transform: translate(-50%,0);
+    left: 50%;
+    padding-top: 5%;
+    display: grid;
+    grid-template-areas: "front back"
+    "others others";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows:repeat(2, 1fr) ;
+    position: absolute;
+    top: 0;
+    gap: 1rem;
+    &::before{
+        position: absolute;
+        border-radius: inherit;
+        content: "";
+        opacity: .5;
+        width: inherit;
+        height: inherit;
+        z-index: -1;
+    }
+    &:hover{
+        filter: blur(0);
+    }
+
+    .frontend{
+        grid-area: front;
+        grid-template-columns: repeat(2,1fr);
+        height: 100%;
+        width: 100%;
+    }
+    .backend{
+        grid-area: back;
+        grid-template-columns: repeat(2,1fr);
+        height: 100%;
+        width: 100%;
+    }
+    .others{
+        grid-template-columns: repeat(3,1fr);
+        position: absolute;
+        transform: translate(-50%,0);
+        left: 50%;
+        grid-area: others;
+        width: 70%;
+    }
+    .frontend,.backend,.others{
+        max-width: 90%;
+        display: grid;
+        padding: 10px;
+        border: 1px solid beige;
+        border-radius: 10px;
+    
+        .skill{
+            width: 200px;
+            max-width: 40vw;
+            height: 60px;
+            border-radius: 10px;
+            padding: 5px;
+            margin: 2px 20px;
+            background: rgb(41, 120, 169,.6);
+            border: 2px solid rgb(41, 120, 169,1);
+            position: relative;
+            display: flex;
+            align-items: center;
+            transition: .5s;
+            &::after{
+                position: absolute;
+                border-radius: 5px;
+                content: "";
+                left: 0%;
+                top: 0;
+                width: 0%;
+                height: 100%;
+                z-index: -1;
+                transition: .5s;
+                background-color: rgb(255, 255, 255);
+
+            }
+            
+            span{
+                padding-left: 5px;
+                font-size: .9rem;
+                font-weight: 600;
+                color: rgba(255, 255, 255, 0.7);
+                
+            }
+            &:hover .progress{
+                opacity: 1;
+            }
+            .progress{
+                opacity: 0;
+            }
+            
+            svg{
+                width: 40px;
+                height: 40px;
+                border-radius: 10%;
+                border: 1px solid rgb(255, 255, 255,.7);
+    
+                path{
+                    fill: rgb(255, 255, 255,.7);
+                    stroke: transparent;
+                }
+            }
+        }
+    }
+}
+
+$frontendSkill: (85,85,80,60,85,60);
+$frontendFill: (rgb(38,77,228),rgb(172,58,29),rgb(240, 237, 51),rgb(18, 96, 168),rgb(230, 25, 230),rgb(41, 159, 228));
+
+$backendSkill:(50,85,55,30,70,40);
+$backendFill: (rgb(3, 95, 11),rgb(37, 34, 212),rgb(3, 5, 116),rgb(4, 104, 4),rgb(115,119,173),rgb(245, 30, 30));
+
+$othersSkill:(80,80,80,30,30);
+$othersFill: (rgb(0,24,51),rgb(5, 5, 5),rgb(58,148,205),rgb(0,118,247),rgb(250, 7, 7));
+$skills:('frontend','backend','others');
+$count:(6,6,5);
+
+.skills{
+    .container{
+        .frontend{
+            .skill{
+
+                @for $i from 1 through 6{
+                    
+                    &:nth-child(#{$i}):hover::after{
+                        width: nth($frontendSkill, $i) * 1%;
+                    }
+                    &:nth-child(#{$i}):hover svg path{
+                        fill: nth($frontendFill, $i);
+                    }
+                    &:nth-child(#{$i}):hover span{
+                        color: rgb(255, 255, 255);
+                    }
+
+                    &:nth-child(#{$i}):hover svg{
+                        border:1px solid nth($frontendFill, $i);
+                    }
+                }
+                &:hover svg{
+                    border:1px solid  rgb(255, 255, 255);
+                }
+                
+            }
+        }
+        .backend{
+            .skill{
+
+                @for $i from 1 through 6{
+                    
+                    &:nth-child(#{$i}):hover::after{
+                        width: nth($backendSkill, $i) * 1%;
+                    }
+                    &:nth-child(#{$i}):hover svg path{
+                        fill: nth($backendFill, $i);
+                    }
+                    &:nth-child(#{$i}):hover span{
+                        color: rgb(255, 255, 255);
+                    }
+
+                    &:nth-child(#{$i}):hover svg{
+                        border:1px solid nth($backendFill, $i);
+                    }
+                    
+                }
+                
+                &:hover svg{
+                    border:1px solid  rgb(255, 255, 255);
+                }
+                
+            }
+        }
+        .others{
+            .skill{
+
+                @for $i from 1 through 5{
+                    
+                    &:nth-child(#{$i}):hover::after{
+                        width: nth($othersSkill, $i) * 1%;
+                    }
+                    &:nth-child(#{$i}):hover svg path{
+                        fill: nth($othersFill, $i);
+                    }
+                    &:nth-child(#{$i}):hover span{
+                        color: rgb(255, 255, 255);
+                    }
+
+                    &:nth-child(#{$i}):hover svg{
+                        border:1px solid nth($othersFill, $i);
+                    }
+                }
+                &:hover svg{
+                    border:1px solid  rgb(255, 255, 255);
+                }
+                
+            }
+        }
+    }
+}

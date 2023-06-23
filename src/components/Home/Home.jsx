@@ -2,7 +2,8 @@ import React from 'react';
 import './home.scss';
 import Nav from '../Nav/Nav';
 import { useEffect, useState } from "react";
-import Test from '../Test';
+import Loader from '../Loader';
+import Skills from '../Skills/Skills';
 
 
 function Home() {
@@ -44,11 +45,10 @@ return (
               </div>
           ))}
         </div>
-
         <Nav/>
       </div>
     :
-      <Test/>  
+      <Loader/>  
     }
     
     </>

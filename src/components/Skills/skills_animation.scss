@@ -1,6 +1,7 @@
 $delay:1s;
 
-.skills{
+.skills.active{
+    opacity: 1;
     .container{
         .card:nth-child(1){
             animation: show 1s $delay+1.5s forwards; 
@@ -56,6 +57,8 @@ $delay:1s;
         }
         .card:nth-child(14){
             animation: zoom-out 1s forwards; 
+            transition: 1s;
+
             
         }
         .card:nth-child(15){
@@ -76,7 +79,7 @@ $delay:1s;
 
 @keyframes zoom-out {
     from{
-        transform: scale(10);
+        transform: scale(8);
         opacity: 0;
 
     }

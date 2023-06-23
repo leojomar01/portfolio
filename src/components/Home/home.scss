@@ -32,16 +32,20 @@ body{
 
 .home{
     height: 100%;
-    *{
-        transition: 1.5s;
-    }
+    transition: 1.5s;
+
     .background{
         opacity: .1;
+        transition: 1.5s;
 
         .box{
             border-radius: 100%;
+            transition: 1.5s;
+
             ion-icon{
                 font-size: 0%;
+                transition: 1.5s;
+
             }
         }
     }
@@ -55,6 +59,8 @@ body{
         height: 100%;
         width: 100vw;
         overflow: hidden;
+        margin: 0;
+
         .box{
             border-radius: 15%;
             aspect-ratio: 1/1;

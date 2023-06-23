@@ -7,6 +7,7 @@ import Nav from '../Nav/Nav';
 
 function Skills() {
 
+
     const hexagon = (
       <svg height="200px" width="200px" viewBox="-5 -9 200 200" transform="rotate(90)">
         <g>

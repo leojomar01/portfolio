@@ -1,14 +1,16 @@
 $hexSize:100;
 .skills{
+    opacity: 0;
     width:100vw;
-    height:100vh;
+    height:120vh;
     position: absolute;
     display: flex;
     justify-content: center;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
     transform: translate(-50%,0%);
     left: 50%;
-    top:-90vh;
+    top:-80vh;
+    transition: 1s;
 
     .container{
         width: $hexSize * 7px;
@@ -39,6 +41,7 @@ $hexSize:100;
         }
         
         .card{
+            transition: 1s;
             opacity: 0;
             display: inline-block;
             width: $hexSize+px;
@@ -52,7 +55,7 @@ $hexSize:100;
                 svg{
                     width: $hexSize*.5px;
                     height: $hexSize*.5px;
-                    fill: rgb(41, 120, 169,.3);
+                    fill: rgb(41, 120, 169,.7);
                     transition: .5s;
                 }
             }
@@ -62,7 +65,7 @@ $hexSize:100;
                 g{
                     .line{
                         fill: rgb(41, 120, 169,.3);
-                        stroke: rgb(41, 120, 169,.3);
+                        stroke: rgb(41, 120, 169,.7);
                         stroke-width: 5;
                         transition: .5s;
                         stroke-dasharray: 560;
@@ -138,6 +141,8 @@ $i:0;
                 .icon{
                     svg{
                         fill:skill($skill,fill);
+                    transition: .5s;
+
                     }
                 }
                 svg{

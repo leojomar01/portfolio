@@ -4,7 +4,18 @@
     transform: translate(-50%,0);
     left: 50%;
 
+    .nav-button{
+        position: relative;
+        top: 0;
+        height: 70px;
+        width: 70px;
+        border: 1px solid red;
+        margin-bottom: 20px;
+    }
+
     .menu{
+        transition: 1s;
+        opacity: 1;
         width: 520px;
         height: 50px;
         max-width: 90vw;
@@ -32,46 +43,56 @@
             mask-image: url('../../assets/images/mask.png');
             mask-size: inherit;
         }
-        li{
-            list-style: none;
-            width: 100%;
-            position: relative;
-            a{
-                color: white;
-                width: 100%;
-                text-decoration: none;
-            }
-            &:hover::after,&:hover:before,&::before,&::after{
-                position: absolute;
-                transform: translate(-50%,0);
-                left: 50%;
+
+        #marker{
+            position: absolute;
+            height: 50px;
+            transition: .7s;
+            bottom: 0;
+            
+            &::before{
                 content: "";
-            }
-            &::after{
-                height: 0;
-                width: 0;
-            }
-            &:hover::after{
+                height: 90%;
+                width: 100%;
+                position: absolute;
+                left: 0;
                 border-radius: 50%;
                 background:rgb(0, 157, 255) ;
-                height: 100%;
-                width: 100%;
-                filter: blur(25px);
-                bottom: 0;
-                transition: .3s;
+                filter: blur(30px);
                 z-index: -1;
             }
-            &::before{
-                height: 100%;
-                width: 0%;
-                bottom: -50%;
-                border-bottom: 2px solid rgb(0, 157, 255);
-                transition: .3s;
-                z-index: -1;
-            }
-            &:hover::before{
+            &::after{
+                content: "";
+                height: 90%;
+                position: absolute;
                 width: 50%;
+                left: 50%;
+                transform: translate(-50%,0);
+                border-bottom: 3px solid rgb(68, 183, 255);
+
             }
         }
+        li{
+            height: 100%;
+            list-style: none;
+            width: 100%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+.nav{
+    
+    .menu.notactive{
+        transform: rotateY(180deg) translate(50%,0%) scale(.5);
+        opacity: 0;
     }
 }

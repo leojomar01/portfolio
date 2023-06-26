@@ -63,18 +63,41 @@ function Nav() {
     hideALL()
   }
   const showAbout = () =>{
+    const about = document.querySelector('.name')
     hideALL()
+    about.classList.add('active')
   }
   const hideALL = ()=>{
     const skills = document.querySelector('.skills');
+    const about = document.querySelector('.name');
+
+    about.classList.remove('active');
     skills.classList.remove('active');
   }
 
+  const hexagon = (
+      <g>
+        <path className="line" d="M0,92.375l46.188-80h92.378l46.185,80l-46.185,80H46.188L0,92.375z"></path>
+        <path className="progress" d="M0,92.375l46.188-80h92.378l46.185,80l-46.185,80H46.188L0,92.375z"></path>
+      </g>
+  );
 
   return (
     <div className='nav'>
-      <Skills/>
       <div className="nav-button" onClick={navToggle}>
+      <svg className='hex1' viewBox="-5 -9 200 200" transform="rotate(90)">
+        {hexagon}
+      </svg>
+      <svg className='hex2' viewBox="-5 -9 200 200" transform="rotate(90)">
+        {hexagon}
+      </svg>
+      <svg className='hex3' viewBox="-5 -9 200 200" transform="rotate(90)">
+        {hexagon}
+      </svg>
+      <svg className='hex4' viewBox="-5 -9 200 200" transform="rotate(90)">
+        {hexagon}
+      </svg>
+
         
       </div>
       <ul className={"menu " + classNav} ref={navLinkref}>

@@ -14,20 +14,26 @@ body,
 #root,
 .App {
 	height: 100%;
+
 }
 
 html{
-    overflow: auto;
+    overflow: hidden;
     background: var(--bg);
+    cursor: url('../mouse.svg'), auto;
+
 }
 body{
     position: relative;
+
 }
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: url('../mouse.svg'), auto;
+
 }
 
 .home{

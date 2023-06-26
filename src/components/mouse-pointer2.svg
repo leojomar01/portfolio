@@ -1,0 +1,11 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"  
+    viewBox="-14 0 51 51"
+    fill= 'rgb(41, 120, 169,.5)'
+    stroke= 'rgba(109, 199, 255, 1)'
+    stroke-linejoin='round'
+    stroke-width='2'
+>
+    <path  d="M3 1, 3 25, 0 23, -3 25, -3 1 -13 35, 0 23,-5 27, 0 35, 0 23, 5 27,0 35 0 23 13 35 z"/>
+
+</svg>

@@ -1,3 +1,4 @@
+
 .nav{
     position: absolute;
     bottom: 10%;
@@ -7,14 +8,51 @@
     .nav-button{
         position: relative;
         top: 0;
-        height: 70px;
-        width: 70px;
-        border: 1px solid red;
-        margin-bottom: 20px;
+        height: 50px;
+        width: 50px;
+        margin-bottom: 10px;
+        *{cursor: url('../mouse-pointer.svg'),auto;}
+
+        svg{
+            fill: transparent;
+            stroke-width: 10;
+            position: absolute;
+            transform: translate(-50%,-50%) rotate(90deg);
+            left: 50%;
+            top: 50%;
+        }
+        .hex1{
+            width: 60px;
+            height: 60px;
+            stroke: rgb(41, 120, 169,.25);
+            fill: rgb(41, 120, 169,.25);
+
+        }
+        .hex2{
+            width: 45px;
+            height: 45px;
+            stroke: rgb(41, 120, 169,.25);
+            fill: rgb(41, 120, 169,.25);
+        }
+        .hex3{
+            width: 30px;
+            height: 30px;
+            stroke: rgb(41, 120, 169,.25);
+            fill: rgb(41, 120, 169,.25);
+        }
+        .hex4{
+            width: 15px;
+            height: 15px;
+            stroke: rgb(41, 120, 169,.25);
+            fill: rgb(41, 120, 169,.25);
+        }
+        
     }
 
     .menu{
+        
         transition: 1s;
+        visibility: visible;
         opacity: 1;
         width: 520px;
         height: 50px;
@@ -69,10 +107,10 @@
                 left: 50%;
                 transform: translate(-50%,0);
                 border-bottom: 3px solid rgb(68, 183, 255);
-
             }
         }
         li{
+            
             height: 100%;
             list-style: none;
             width: 100%;
@@ -81,10 +119,11 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            &:hover{
-                cursor: pointer;
-            }
+            cursor: pointer;
+            cursor: url('../mouse-pointer.svg'),auto;
+        
         }
+        
     }
 }
 
@@ -93,6 +132,29 @@
     
     .menu.notactive{
         transform: rotateY(180deg) translate(50%,0%) scale(.5);
+        visibility: hidden;
         opacity: 0;
+    }
+}
+
+
+@keyframes hex-rotate{
+    0%,90%{
+        transform: translate(-50%,-50%) rotate(90deg);
+        transition: 1s;
+    }
+    100%{
+        transform: translate(-50%,-50%) rotate(450deg);
+    }
+}
+@keyframes beat{
+    0%{
+        transform: translate(-50%,-50%) scale(1) rotate(90deg);
+    }
+    50%{
+        transform: translate(-50%,-50%) scale(1.5) rotate(90deg);
+    }
+    100%{
+        transform: translate(-50%,-50%) scale(1) rotate(90deg);
     }
 }

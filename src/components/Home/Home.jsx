@@ -4,6 +4,7 @@ import Nav from '../Nav/Nav';
 import { useEffect, useState } from "react";
 import Loader from '../Loader';
 import Skills from '../Skills/Skills';
+import Name from '../Name/Name';
 
 
 function Home() {
@@ -29,11 +30,14 @@ useEffect(() => {
 }, [randomNum]); 
 
 
+
+
 return (
     <>
+
       {!isLoading?
       <div className={'home '+cName}>
-        <div className="background">
+        {/* <div className="background">
           {list.map((e,i)=>(
               <div className={`box box${i}`} key={i}>
                 <ion-icon name={`logo-${e}`}></ion-icon>
@@ -44,7 +48,9 @@ return (
               <div className={`box box${i+list.length}`} key={i}>
               </div>
           ))}
-        </div>
+        </div> */}
+        <Name/>
+        <Skills/>
         <Nav/>
       </div>
     :

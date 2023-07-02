@@ -1,16 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './nav.scss';
-import Skills from '../Skills/Skills';
+import { Link } from 'react-router-dom';
 
 
 
-function Nav() {
+function Nav(props) {
 
+  const {location} = props;
   const navLinkref = useRef(null);
   const [left,setLeft] = useState(0);
   const [width,setWidth] = useState(0);
   const [isNavActive,setIsNavActive] = useState(true);
-
   const style = {
     left: left,
     width:width
@@ -18,9 +18,27 @@ function Nav() {
 
   const classNav = isNavActive? 'active' :'notactive'; 
 
+
   const navToggle = () =>{
     setIsNavActive(!isNavActive)
   }
+
+
+  useEffect(()=>{
+    const navLinkList = navLinkref.current.querySelectorAll('.navLink');
+
+    const makeActive =(e)=>{
+      const activeID =(e==='/')?document.querySelector('#about'): document.querySelector('#'+e.slice(1))
+      navLinkList.forEach(navLink => {
+       navLink.classList.remove('active');
+       activeID.classList.add('active')
+      });
+    }
+
+    makeActive(location)
+
+  },[location])
+
 
   useEffect(()=>{
     const navLinkList = navLinkref.current.querySelectorAll('.navLink');
@@ -29,7 +47,6 @@ function Nav() {
       setLeft(e.offsetLeft + 'px')
       setWidth(e.offsetWidth + 'px')
     }
-
     const backToActive = ()=>{
       const navLinkActive = navLinkref.current.querySelector('.navLink.active');
       setWidth(navLinkActive.offsetWidth + 'px')
@@ -52,29 +69,6 @@ function Nav() {
   },[navLinkref])
 
 
-
-
-  const showSkills = () => {
-    const skills = document.querySelector('.skills');
-    hideALL()
-    skills.classList.add('active');
-  }
-  const showProjects = () =>{
-    hideALL()
-  }
-  const showAbout = () =>{
-    const about = document.querySelector('.name')
-    hideALL()
-    about.classList.add('active')
-  }
-  const hideALL = ()=>{
-    const skills = document.querySelector('.skills');
-    const about = document.querySelector('.name');
-
-    about.classList.remove('active');
-    skills.classList.remove('active');
-  }
-
   const hexagon = (
       <g>
         <path className="line" d="M0,92.375l46.188-80h92.378l46.185,80l-46.185,80H46.188L0,92.375z"></path>
@@ -85,26 +79,25 @@ function Nav() {
   return (
     <div className='nav'>
       <div className="nav-button" onClick={navToggle}>
-      <svg className='hex1' viewBox="-5 -9 200 200" transform="rotate(90)">
-        {hexagon}
-      </svg>
-      <svg className='hex2' viewBox="-5 -9 200 200" transform="rotate(90)">
-        {hexagon}
-      </svg>
-      <svg className='hex3' viewBox="-5 -9 200 200" transform="rotate(90)">
-        {hexagon}
-      </svg>
-      <svg className='hex4' viewBox="-5 -9 200 200" transform="rotate(90)">
-        {hexagon}
-      </svg>
-
-        
+        <svg className='hex1' viewBox="-5 -9 200 200" transform="rotate(90)">
+          {hexagon}
+        </svg>
+        <svg className='hex2' viewBox="-5 -9 200 200" transform="rotate(90)">
+          {hexagon}
+        </svg>
+        <svg className='hex3' viewBox="-5 -9 200 200" transform="rotate(90)">
+          {hexagon}
+        </svg>
+        <svg className='hex4' viewBox="-5 -9 200 200" transform="rotate(90)">
+          {hexagon}
+        </svg>
       </div>
+
       <ul className={"menu " + classNav} ref={navLinkref}>
         <div id='marker' style={style}></div>
-        <li className='navLink active' onClick={showAbout}>About</li>
-        <li className='navLink' onClick={showProjects}>Projects</li>
-        <li className='navLink' onClick={showSkills}>Skills</li>
+        <Link to='/' id='about' className='navLink active'>About</Link>
+        <Link to='/projects' id='projects' className='navLink'>Projects</Link>
+        <Link to='/skills' id='skills' className='navLink'>Skills</Link>
       </ul>
     </div>
   )

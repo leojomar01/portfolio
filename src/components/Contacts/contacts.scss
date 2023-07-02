@@ -1,6 +1,22 @@
-.contact-list{
-
-    li{
-        font-size: 2rem;
+.contacts{
+    position: absolute;
+    right: 10%;
+    bottom: 5%;
+    .contact-list{
+        display: flex;
+        gap: 2rem;
+        *{cursor: url('../mouse-pointer.svg'),pointer;}
+        li{
+            list-style: none;
+            a{
+                color: rgb(41, 120, 169,.5);
+                font-size: 2rem;
+                &:hover{
+                    color: rgb(41, 120, 169,1);
+                }
+            }
+        }
     }
 }
+
+

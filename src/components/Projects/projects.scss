@@ -1,0 +1,188 @@
+:root{
+    --swiper-navigation-size: 60px;
+    --swiper-navigation-top-offset: 35%;
+    --swiper-navigation-sides-offset: 40px;
+    --swiper-navigation-color: rgba(255, 255, 255, 1);
+}
+
+.projects{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 60%;
+    left: 50%;
+    width: 90vw;
+    height: 90vh;
+    overflow: hidden;
+    swiper-container{
+        mask-image: linear-gradient(to right, rgb(0, 0, 0,0), rgb(255, 255, 255) 10%, rgb(255, 255, 255) 90%,rgb(0, 0, 0,0) );
+        height: 70%;
+        padding-bottom:10% !important ;
+        width: 99%;
+        overflow: visible;
+        padding: 1rem;
+        swiper-slide{
+            transition: .5s !important;
+            position: relative;
+            transform: scale(.9);
+            mask-image: url('../../assets/images/hex2.png');
+            mask-size: 100% 100%;
+            border: 1px solid red;
+
+            &:hover{
+                .bgImage{
+                    filter:blur(10px);
+                }
+                .card{
+                    .title{
+                        bottom: 0;
+                    }
+                    .links{
+                        top: 50%;
+
+                    }
+                }
+            }
+            &::before{
+                content: "";
+                mask-image: url('../../assets/images/hex1.png');
+                background-color: var(--color3);
+                mask-size: 100% 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+
+            }
+
+            .bgImage{
+                transform: translate(-50%,-50%);
+                left: 50%;
+                top: 50%;
+                height: 96%;
+                width: 96%;
+                position: absolute;
+                mask-image: url('../../assets/images/hex2.png');
+                mask-size: 100% 100%;
+                transition: .5s;
+
+                img{
+                    position: absolute;
+                    height: 100%;
+                    width: auto;
+                    transform: translate(-50%,-50%);
+                    left: 50%;
+                    top: 50%;
+                    border-radius: 10%;
+                }
+            }
+            .card{
+                transform: translate(-50%,-50%);
+                left: 50%;
+                top: 50%;
+                height:100%;
+                width: 100%;
+                position: relative;
+                // overflow: hidden;
+                border-radius: 10%;
+                
+                .title{
+                    position: absolute;
+                    transform: translate(-50%,0);
+                    left: 50%;
+                    bottom: -100%;
+                    width: 100%;
+                    height: 30%;
+                    text-align: center;
+                    padding: 5px;
+                    color: white;
+                    transition: .5s;
+                    background-color: var(--color3);
+                    display: flex;
+                    justify-content: center;
+                    h4{
+                        margin-top: .5rem;
+                        width: 50%;
+                    }
+                }
+                .desc{
+                    position: absolute;
+                    transform: translate(-50%,0%);
+                    top: 160%;
+                    left: 50%;
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+                    transition: .5s;
+                    background-color: var(--color3);
+                    padding: 2rem;
+                    padding-top: .3rem;
+                }
+                .links{
+                    transition: .5s;
+                    position: absolute;
+                    transform: translate(-50%,-50%);
+                    left: 50%;
+                    top: -50%;
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 2rem;
+                    .link{
+                        *{
+                            cursor:url('../mouse-pointer.svg'), pointer;
+                        }
+                        transition: .3s;
+                        a,Link{
+                            text-decoration: none;
+                            color: white;
+                            font-size: 2.5rem;
+
+                            &:hover{
+                                color: rgb(163, 159, 159);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .swiper-slide-active{
+            transform: scale(1.1);
+
+            &:hover{
+            height: 120% !important;
+
+                .bgImage{
+                    filter:blur(10px);
+                }
+                .card{
+                    .title{
+                        bottom: 40%;
+                        height: auto;
+
+                        h4{
+                            margin-top: .25rem;
+                            margin-bottom: .25rem;
+                        }
+
+                    }
+                    .desc{
+                        top: 59.5%;
+                    }
+                    .links{
+                        top: 30%;
+
+                    }
+                }
+            }
+        }
+
+        
+    }
+
+
+        
+}

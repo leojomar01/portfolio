@@ -1,0 +1,55 @@
+{
+    "projects":[
+        {
+            "title":"KLR",
+            "image":"s.png",
+            "liveLink":"https://klr-tutorials.herokuapp.com/",
+            "repoLink":null,
+            "desc":"A tutoring platform connects students with tutors for academic support."
+        },
+        {
+            "title":"Tell me",
+            "image":"s.png",
+            "liveLink":"https://tellme-mu.vercel.app/",
+            "repoLink":"https://github.com/leojomar01/tellme",
+            "desc":"Confess anonymously on a dedicated website using Concati API."
+        },
+        {
+            "title":"Ez.com",
+            "image":"s.png",
+            "liveLink":"https://leojomar01.github.io/MiniProject-2",
+            "repoLink":"https://github.com/leojomar01/MiniProject-2",
+            "desc":"A job-hunting site is a website or application where job seekers can search and apply for job openings posted by employers."
+        },
+        {
+            "title":"Interactive Portfolio",
+            "image":"s.png",
+            "liveLink":"https://leojomar01.github.io/I-Portfolio/",
+            "repoLink":"https://github.com/leojomar01/I-Portfolio",
+            "desc":"Compilation of my projects and activities while learning to become a full stack dev"
+        },
+        {
+            "title":"Lemonades",
+            "image":"s.png",
+            "liveLink":"https://leojomar01.github.io/lemonades/",
+            "repoLink":"https://github.com/leojomar01/lemonades",
+            "desc":"Homepage for website with advance animation."
+        },
+        {
+            "title":"Calculator",
+            "image":"s.png",
+            "liveLink":"https://leojomar01.github.io/Digital_Calculator/",
+            "repoLink":"https://github.com/leojomar01/Digital_Calculator",
+            "desc":"First project with SASS simple calculator with different styles."
+        },
+        {
+            "title":"Chat-app",
+            "image":"s.png",
+            "liveLink":null,
+            "repoLink":"https://github.com/leojomar01/chat-app",
+            "desc":"Chat-app using MERN stack with real time notification and chats"
+        }
+        
+    ]
+   
+}

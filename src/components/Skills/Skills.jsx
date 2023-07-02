@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './skills.scss';
 import './skills_animation.scss';
-import Nav from '../Nav/Nav';
+import {motion} from "framer-motion";
 
 
 
@@ -18,7 +18,11 @@ function Skills() {
     );
     
   return (
-    <div className='skills'>
+    <motion.div className='skills active'
+      exit={{opacity:0}}
+      transition={{type:'tween',duration:.5}}
+
+    >
         <div className="container" >
             <div className="card" >
                 {hexagon}
@@ -148,7 +152,7 @@ function Skills() {
               </svg></div>
             </div>
         </div>
-    </div>
+    </motion.div>
   )
 }
 

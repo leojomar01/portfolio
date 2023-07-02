@@ -19,13 +19,13 @@ $time: 2s;
         g {
           transform-box: fill-box;
           transform-origin: 33% 50%;
-          animation: $time linear ($time / 12) * $i infinite hexagon-flip-triangles;
+          animation: $time linear ($time / 12) * $i 3 hexagon-flip-triangles;
           stroke: $stroke;
           stroke-width: 2;
 
           path {
             transform: rotateY(90deg);
-            animation: $time linear ($time / 12) * $i infinite hexagon-fold-triangles;
+            animation: $time linear ($time / 12) * $i 3 hexagon-fold-triangles;
           }
         }
       }

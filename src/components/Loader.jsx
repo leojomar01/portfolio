@@ -1,6 +1,10 @@
-import React from 'react'
-import './loader.scss'
-function Loader() {
+import React from 'react';
+import './loader.scss';
+import { motion } from "framer-motion";
+
+function Loader(props) {
+
+  const {isLoading} = props;
 
     const triangles=[];
     for(let i = 0; i<6;i++){
@@ -13,17 +17,17 @@ function Loader() {
         )
     }
   return (
-    <div>
-  <div className="loader">
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="hexagon"
-    viewBox="-5 0 110 130">
-    {triangles}
-  </svg>
-</div>
+    <>
+      <div className="loader" >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="hexagon"
+          viewBox="-5 0 110 130">
+          {triangles}
+        </svg>
+      </div>
+    </>
 
-    </div>
   )
 }
 

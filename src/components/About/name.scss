@@ -271,6 +271,7 @@ $width:350 / 2;
     $width:350 / 2.5;  
     .about{
         .nameAnimation{
+            grid-row: -1;
             .letter-L,.letter-E,.letter-O{
                 height: $height + 20px;
                 width: $width+ px ;

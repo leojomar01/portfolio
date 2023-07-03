@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import './skills.scss';
 import './skills_animation.scss';
 import {motion} from "framer-motion";
@@ -7,6 +7,26 @@ import {motion} from "framer-motion";
 
 function Skills() {
 
+  useEffect(() => {
+
+      const centerScroll = () => {
+        let scrollElement = document.querySelector('.skills');
+        if (scrollElement) {
+          scrollElement.scrollLeft = ((scrollElement.scrollWidth - scrollElement.clientWidth) / 2) - 22.5;
+        }
+      };
+      
+      if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        centerScroll();
+      } else {
+        document.addEventListener('DOMContentLoaded', centerScroll);
+      }
+    
+      return () => {
+        document.removeEventListener('DOMContentLoaded', centerScroll);
+      };
+  }, []);
+  
 
     const hexagon = (
       <svg height="200px" width="200px" viewBox="-5 -9 200 200" transform="rotate(90)">

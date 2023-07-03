@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './projects.scss';
 import { motion} from "framer-motion";
 import { register } from 'swiper/element/bundle';
@@ -14,6 +14,16 @@ function Projects() {
   // double the list to fix visual bug in swiper js
   const doubleProjects = allProjects.concat(allProjects);
 
+  useEffect(()=>{
+    const width = window.innerWidth;
+    const swiperEl = document.querySelector('swiper-container');
+    (width<400)?
+      swiperEl.setAttribute('slides-per-view', '2')
+      :
+      swiperEl.setAttribute('slides-per-view', '4')
+      ;
+  })
+
   return (
     <motion.div className='projects'
         initial={{opacity:0}}
@@ -24,7 +34,7 @@ function Projects() {
        <swiper-container 
         slides-per-view="4" 
         centered-slides= 'true'
-        speed="600" 
+        speed={"600"} 
         loop="true" 
         navigation
        >

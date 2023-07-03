@@ -74,7 +74,15 @@ function About() {
         >
             <div className='letter-L'>
                 {letterL.map((i)=>(
-                    <div className='triangle' key={i}></div>
+                    <motion.div 
+                        className={'triangle'} 
+                        key={i}
+                        transition={{delay:((i+1)*.05)}} 
+                        initial={{opacity:0}}
+                        animate={{opacity:1}}   
+                    >
+
+                    </motion.div>
                 ))}
             </div>
 

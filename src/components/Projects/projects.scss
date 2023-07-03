@@ -186,3 +186,33 @@
 
         
 }
+
+@media screen and (max-width:450px){
+    :root{
+        --swiper-navigation-size: 30px;
+        --swiper-navigation-top-offset: 40%;
+        --swiper-navigation-sides-offset: 50px;
+        --swiper-navigation-color: rgba(255, 255, 255, 1);
+    }
+    .projects{
+        height: 50vh;
+        top: 50%;
+        swiper-container{
+            height: 80%;
+            width: 130%;
+            transform: translate(-50%,0);
+            left: 50%;
+            padding-bottom:20% !important ;
+            swiper-slide{
+                .card{
+                    .title{
+
+                    }
+                    .desc{
+                        font-size: .8rem;
+                    }
+                }
+            }
+        }
+    }
+}

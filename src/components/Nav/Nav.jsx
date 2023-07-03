@@ -24,8 +24,6 @@ function Nav(props) {
     setIsNavActive(!isNavActive)
   }
 
-    
-
 
   useEffect(()=>{
     const navLinkList = navLinkref.current.querySelectorAll('.navLink');

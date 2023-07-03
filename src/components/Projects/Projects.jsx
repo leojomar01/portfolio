@@ -41,7 +41,7 @@ function Projects() {
         {
             doubleProjects.map((e,i)=>(
               <swiper-slide key={i}>
-                <div className="bgImage"><img src={`./images/${e.image}`} alt="" /></div>
+                <div className="bgImage"><img className='bg' src={`./images/${e.image}`}/><img src={`./images/${e.image}`}/></div>
                 <div className='card'>
                   <div className="title"><h4>{e.title}</h4></div>
                   <div className="desc"><h6>{e.desc?e.desc:"No Details"}</h6></div>

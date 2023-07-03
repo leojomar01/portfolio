@@ -23,7 +23,7 @@ $width:350 / 2;
                 $delay: (random(24)*5) * -0.1s; 
                 $duration: random(2) + 3s; 
                 .triangle:nth-child(#{$i}){
-                    background-color: rgb(41, 120, 169,.5);
+                    background: rgb(41, 120, 169,.5);
                     animation: $duration name-animation  $delay linear infinite;
                 }
             }
@@ -186,8 +186,10 @@ $width:350 / 2;
             left: 50%;
             $opacity:.5;
             .triangle{
-                background-color: rgb(41, 120, 169,$opacity);
-                transform: rotate(360deg);
+                background: url('../../assets/images/leo.png') rgb(41, 120, 169,.5); 
+                background-size: auto 100%;
+                transform: rotate(360deg)  ;
+                
     
             }
             .triangle:nth-child(6){

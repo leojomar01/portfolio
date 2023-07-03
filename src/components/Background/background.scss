@@ -5,7 +5,7 @@
     --bg: #0F172A;
     --fonthover: #616060;
 
-    --color0: rgb(41, 120, 169,.1);
+    --color0: rgb(41, 120, 169,.2);
     --color1: rgb(41, 120, 169,.3);
     --color2: rgb(41, 120, 169,.5);
     --color3: rgb(41, 120, 169,1);
@@ -107,6 +107,19 @@ body{
     }
 }
 
+
+@media screen and (max-width:450px){
+    .background{
+        @for $i from 1 through 18 {
+            $size:((random(3))*2 + 1vw)*2.5;
+            .box#{$i}{
+                height: $size;
+                font-size: $size;
+                
+            }
+        }
+    }
+}
 
 @keyframes animate {
     0% {

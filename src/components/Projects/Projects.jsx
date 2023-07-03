@@ -17,7 +17,7 @@ function Projects() {
   useEffect(()=>{
     const width = window.innerWidth;
     const swiperEl = document.querySelector('swiper-container');
-    (width<400)?
+    (width<450)?
       swiperEl.setAttribute('slides-per-view', '2')
       :
       swiperEl.setAttribute('slides-per-view', '4')

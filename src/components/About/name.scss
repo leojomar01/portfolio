@@ -5,7 +5,7 @@ $width:350 / 2;
     .nameAnimation{
         position: relative;
         height: 100%;
-        width: 50%;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -260,5 +260,21 @@ $width:350 / 2;
     }
     100%{
         transform: scale(1);
+    }
+}
+
+
+
+
+@media screen and (max-width:450px){
+    $height:375 / 2.5;
+    $width:350 / 2.5;  
+    .about{
+        .nameAnimation{
+            .letter-L,.letter-E,.letter-O{
+                height: $height + 20px;
+                width: $width+ px ;
+            }
+        }
     }
 }

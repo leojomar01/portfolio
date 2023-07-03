@@ -66,10 +66,6 @@ function About() {
             </motion.h1>
         </div>
 
-        <div className="info">
-
-        </div>
-
 
         <motion.div className='nameAnimation close'
             initial={{opacity:0,x:30}}

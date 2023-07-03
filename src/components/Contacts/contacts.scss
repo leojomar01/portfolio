@@ -1,6 +1,7 @@
 .contacts{
     position: absolute;
-    right: 10%;
+
+    right: 8%;
     bottom: 5%;
     .contact-list{
         display: flex;
@@ -13,6 +14,23 @@
                 font-size: 2rem;
                 &:hover{
                     color: rgb(41, 120, 169,1);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:450px){
+    .contacts{
+        right: 30%;
+        bottom: 2%;
+
+        .contact-list{
+            gap: 1rem;
+            li{
+                a{
+                    font-size: 1.5rem;
+                   
                 }
             }
         }

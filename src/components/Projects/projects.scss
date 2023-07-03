@@ -191,15 +191,16 @@
     :root{
         --swiper-navigation-size: 30px;
         --swiper-navigation-top-offset: 40%;
-        --swiper-navigation-sides-offset: 50px;
+        --swiper-navigation-sides-offset: 60px;
         --swiper-navigation-color: rgba(255, 255, 255, 1);
     }
     .projects{
         height: 50vh;
         top: 50%;
+        width: 100vw;
         swiper-container{
             height: 80%;
-            width: 130%;
+            width: 120%;
             transform: translate(-50%,0);
             left: 50%;
             padding-bottom:20% !important ;

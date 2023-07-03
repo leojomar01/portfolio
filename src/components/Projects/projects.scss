@@ -74,11 +74,12 @@
                     left: 50%;
                     top: 50%;
                     border-radius: 10%;
+                    filter: brightness(.7);
                 }
                 .bg{
                     height: auto;
                     width: 200%;
-                    filter: blur(20px);
+                    filter: blur(20px) brightness(.5);
                 }
             }
             .card{

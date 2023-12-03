@@ -37,6 +37,9 @@ $hexSize:100;
         .card:nth-child(n+16){
             transform: translate($hexSize* -1.5px,-45px);
         }
+        .card:nth-child(18){
+            margin-left: $hexSize*2px;
+        }
         
         .card{
             transition: 1s;
@@ -87,7 +90,7 @@ $hexSize:100;
 
 $skillList:('css','html','javascript','jquery','sass','react',
 'nodejs','mysql','restapi','mongodb','php','laravel',
-'photoshop','git','vscode','cplusplus','java');
+'photoshop','git','vscode','cplusplus','java','corel');
 
 $skills:(
     css:(
@@ -124,6 +127,8 @@ $skills:(
         progress:35,fill:rgb(0,118,247)),
     java:(
         progress:35,fill:rgb(250, 7, 7)),
+    corel:(
+        progress:40,fill:rgba(84, 250, 7, 0.712)),
 );
 
 

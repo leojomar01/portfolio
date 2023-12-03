@@ -73,6 +73,10 @@ $delay:1s;
             animation: show 1s $delay+.5s forwards; 
             
         }
+        .card:nth-child(18){
+            animation: show 1s $delay+.5s forwards; 
+            
+        }
     }
 }
 

@@ -49,6 +49,13 @@
             "repoLink":"https://github.com/leojomar01/chat-app",
             "desc":"Chat-app using MERN stack with real time notification and chats"
         }
+        {
+            "title":"Wedding Online Invitation",
+            "image":"chat.png",
+            "liveLink":"https://leandro-leovy.vercel.app/",
+            "repoLink":"https://github.com/leojomar01/leandro-leovy",
+            "desc":"Wedding Online Invitation with simple animation"
+        }
         
     ]
    

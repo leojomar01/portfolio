@@ -1,10 +1,6 @@
-import React from 'react';
 import './loader.scss';
-import { motion } from "framer-motion";
 
-function Loader(props) {
-
-  const {isLoading} = props;
+function Loader() { 
 
     const triangles=[];
     for(let i = 0; i<6;i++){

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState,useCallback  } from 'react';
 import './nav.scss';
 import { Link } from 'react-router-dom';
 
@@ -20,10 +20,9 @@ function Nav(props) {
 
   const classNav = isNavActive? 'active' :'notactive'; 
 
-  const navToggle = () =>{
-    setIsNavActive(!isNavActive)
-  }
-
+ const navToggle = useCallback(() => {
+  setIsNavActive(prev => !prev);
+}, []);
 
   useEffect(()=>{
     const navLinkList = navLinkref.current.querySelectorAll('.navLink');
@@ -69,7 +68,7 @@ function Nav(props) {
       navLink.addEventListener('mouseenter',(e)=>indicator(e.target))
       navLink.addEventListener('mouseleave',backToActive)
     });
-  },[navLinkref])
+  },[navLinkref,navToggle,wWidth])
 
 
   
